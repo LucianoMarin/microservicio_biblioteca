@@ -18,7 +18,7 @@ public class Editorial {
     private String nombre;
 
 
-
+    /* CONSTRUCTOR DE LA CLASE EDITORIAL */
     public Editorial(Long id, String nombre){
         
         this.id=id;
@@ -27,9 +27,18 @@ public class Editorial {
     }
 
 
+
+    /*  GETTER AND SETTER DE LA CLASE EDITORIAL */ 
+
+    public void setId(Long id){ this.id=id; }
+
+    public void setNombreEditorial(String nombre){ this.nombre=nombre; }
+
+
+
     public Long getId(){return this.id;}
 
-    public String getNombre(){return this.nombre;}
+    public String getNombreEditorial(){return this.nombre;}
     
 
     

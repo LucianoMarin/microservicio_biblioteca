@@ -32,6 +32,8 @@ public class Autor {
 
 
 
+    /* CONSTRUCTOR DE LA CLASE AUTOR */
+
     public Autor(Long id, String rut, String primer_nombre,String segundo_nombre,String apellido_paterno,String apellido_materno){
 
         this.id=id;
@@ -43,6 +45,25 @@ public class Autor {
 
 
     }
+
+
+
+    /* GETTER AND SETTER CLASE AUTOR */
+
+    public void setId(Long id){ this.id=id;}
+
+    public void setRut(String rut){ this.rut=rut; }
+
+    public void setPrimerNombre(String primer_nombre){ this.primer_nombre=primer_nombre;}
+
+    public void setSegundoNombre(String segundo_nombre){ this.segundo_nombre=segundo_nombre;}
+
+    public void setApellidoPaterno(String apellido_paterno){ this.apellido_materno=apellido_paterno;}
+
+    public void setApellidoMaterno(String apellido_materno){ this.apellido_materno=apellido_materno;}
+
+
+
 
     public Long getId(){return this.id;}
 
