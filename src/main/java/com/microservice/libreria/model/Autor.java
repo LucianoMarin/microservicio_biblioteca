@@ -15,34 +15,21 @@ public class Autor {
     @GeneratedValue (strategy=GenerationType.IDENTITY)
     private Long id;
     
-    @Column (name="rut")
-    private String rut;
+    @Column(name="nombre")
+    private String nombre;
     
-    @Column(name="primer_nombre")
-    private String primer_nombre;
-    
-    @Column(name="segundo_nombre")
-    private String segundo_nombre;
-    
-    @Column(name="apellido_paterno")
-    private String apellido_paterno;
-
-    @Column(name="apellido_materno")
-    private String apellido_materno;
+    @Column(name="apellido")
+    private String apellido;
 
 
 
     /* CONSTRUCTOR DE LA CLASE AUTOR */
 
-    public Autor(Long id, String rut, String primer_nombre,String segundo_nombre,String apellido_paterno,String apellido_materno){
+    public Autor(Long id, String nombre,String apellido){
 
         this.id=id;
-        this.rut=rut;
-        this.primer_nombre=primer_nombre;
-        this.segundo_nombre=segundo_nombre;
-        this.apellido_paterno=apellido_paterno;
-        this.apellido_materno=apellido_materno;
-
+        this.nombre=nombre;
+        this.apellido=apellido;
 
     }
 
@@ -52,30 +39,16 @@ public class Autor {
 
     public void setId(Long id){ this.id=id;}
 
-    public void setRut(String rut){ this.rut=rut; }
+    public void setNombre(String nombre){ this.nombre=nombre; }
 
-    public void setPrimerNombre(String primer_nombre){ this.primer_nombre=primer_nombre;}
-
-    public void setSegundoNombre(String segundo_nombre){ this.segundo_nombre=segundo_nombre;}
-
-    public void setApellidoPaterno(String apellido_paterno){ this.apellido_materno=apellido_paterno;}
-
-    public void setApellidoMaterno(String apellido_materno){ this.apellido_materno=apellido_materno;}
-
-
+    public void setApellido(String apellido){ this.apellido=apellido; }
 
 
     public Long getId(){return this.id;}
 
-    public String getRut(){return this.rut;}
+    public String getNombre(){return this.nombre;}
 
-    public String getPrimerNombre(){return this.primer_nombre;}
-
-    public String getSegundoNombre(){return this.segundo_nombre;}
-
-    public String getApellidoPaterno(){return this.apellido_paterno;}
-
-    public String getApellidoMaterno(){return this.apellido_materno;}
+    public String getApellido(){return this.apellido;}
 
     
 }
