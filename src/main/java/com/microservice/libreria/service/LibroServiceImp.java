@@ -3,23 +3,33 @@ package com.microservice.libreria.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.microservice.libreria.model.Libro;
 import com.microservice.libreria.repository.AutorRepository;
 import com.microservice.libreria.repository.EditorialRepository;
 import com.microservice.libreria.repository.LibroRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Service 
+@Slf4j 
 public class LibroServiceImp implements LibroService {
 
     @Autowired 
     private LibroRepository libroRepository;
 
+   
     @Autowired 
     private AutorRepository autorRepository;
+
+    
 
     @Autowired 
     private EditorialRepository editorialRepository;
 
+ 
 
     @Override
     public Libro crearLibro(Libro libro) {

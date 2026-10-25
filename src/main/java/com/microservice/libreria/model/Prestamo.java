@@ -3,7 +3,6 @@ package com.microservice.libreria.model;
 import java.sql.Date;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -27,9 +27,12 @@ public class Prestamo {
     @JoinColumn (name="socio_id")
     private Socio socio;
 
-    @ManyToMany 
-    @JoinColumn (name="libro_id")
-    private List <Libro> libros;
+    @ManyToMany
+    @JoinTable(
+    name = "prestamo_libro",
+    joinColumns = @JoinColumn(name = "prestamo_id"),
+    inverseJoinColumns = @JoinColumn(name = "libro_id"))
+    private List<Libro> libros;
 
     @Column (name="fecha_prestamo")
     private Date fecha_prestamo;
@@ -45,6 +48,9 @@ public class Prestamo {
 
 
     /* CONSTRUCTOR CLASE PRESTAMO */
+
+    public Prestamo(){}
+    
     public Prestamo(Long id,Socio socio,List <Libro> libros,Date fecha_prestamo,Date fecha_devolucion, Date fecha_entregado){
 
         this.id=id;

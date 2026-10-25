@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity 
-@Table (name="Autor")
+@Table (name="autor")
 public class Autor {
 
     @Id 
@@ -24,6 +24,9 @@ public class Autor {
 
 
     /* CONSTRUCTOR DE LA CLASE AUTOR */
+
+    public Autor() {}
+
 
     public Autor(Long id, String nombre,String apellido){
 

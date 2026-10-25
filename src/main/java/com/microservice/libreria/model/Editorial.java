@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name="Editorial") 
+@Table (name="editorial") 
 public class Editorial {
     
     @Id 
@@ -19,6 +19,11 @@ public class Editorial {
 
 
     /* CONSTRUCTOR DE LA CLASE EDITORIAL */
+
+
+    public Editorial(){}
+
+    
     public Editorial(Long id, String nombre){
         
         this.id=id;

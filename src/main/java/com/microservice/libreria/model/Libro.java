@@ -5,10 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name="Libro") 
+@Table (name="libro") 
 public class Libro {
 
 @Id 
@@ -21,7 +23,8 @@ private String codigo;
 @Column (name="titulo")
 private String titulo;
 
-@Column(name="autor")
+@ManyToOne
+@JoinColumn(name = "autor_id")
 private Autor autor;
 
 @Column(name="ann_publicacion")
@@ -30,7 +33,8 @@ private int ann_publicacion;
 @Column(name="genero")
 private String genero;
 
-@Column (name="editorial")
+@ManyToOne
+@JoinColumn(name = "editorial_id")
 private Editorial editorial;
 
 @Column(name="cantidad")
@@ -40,6 +44,7 @@ private int cantidad;
 
 
 /* CONSTRUCTOR CLASE LIBRO */
+    public Libro() {}
 
     public Libro(Long id,String codigo,Autor autor,int ann_publicacion,String genero,Editorial editorial,String titulo,int cantidad){
         

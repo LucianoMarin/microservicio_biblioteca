@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity 
-@Table (name="Socio")
+@Table (name="socio")
 public class Socio {
 
     @Id 
@@ -39,6 +39,10 @@ public class Socio {
     
 
     /* CONSTRUCTOR CLASE SOCIO */
+    
+    public Socio(){}
+
+
     public Socio(Long id, String rut, String primer_nombre, String segundo_nombre, String apellido_paterno, String apellido_materno, int edad, String estado){
 
         this.id=id;
