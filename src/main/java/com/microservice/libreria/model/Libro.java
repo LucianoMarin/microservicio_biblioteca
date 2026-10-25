@@ -1,13 +1,36 @@
 package com.microservice.libreria.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name="Libro") 
 public class Libro {
 
+@Id 
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
+
+@Column (name="codigo")
 private String codigo;
+
+@Column (name="titulo")
 private String titulo;
+
+@Column(name="autor")
 private Autor autor;
+
+@Column(name="ann_publicacion")
 private int ann_publicacion;
+
+@Column(name="genero")
 private String genero;
+
+@Column(name="cantidad")
 private int cantidad;
 
 

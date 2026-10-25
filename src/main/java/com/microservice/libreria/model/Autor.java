@@ -1,12 +1,33 @@
 package com.microservice.libreria.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table (name="Autor")
 public class Autor {
 
+    @Id 
+    @GeneratedValue (strategy=GenerationType.IDENTITY)
     private int id;
+    
+    @Column (name="rut")
     private String rut;
+    
+    @Column(name="primer_nombre")
     private String primer_nombre;
+    
+    @Column(name="segundo_nombre")
     private String segundo_nombre;
+    
+    @Column(name="apellido_paterno")
     private String apellido_paterno;
+
+    @Column(name="apellido_materno")
     private String apellido_materno;
 
 
