@@ -13,13 +13,13 @@ public class Editorial {
     
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private int id;
+    private Long id;
     @Column (name="nombre")
     private String nombre;
 
 
 
-    public Editorial(int id, String nombre){
+    public Editorial(Long id, String nombre){
         
         this.id=id;
         this.nombre=nombre;
@@ -27,7 +27,7 @@ public class Editorial {
     }
 
 
-    public int getId(){return this.id;}
+    public Long getId(){return this.id;}
 
     public String getNombre(){return this.nombre;}
     

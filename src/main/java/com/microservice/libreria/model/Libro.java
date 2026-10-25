@@ -13,7 +13,7 @@ public class Libro {
 
 @Id 
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
+private Long id;
 
 @Column (name="codigo")
 private String codigo;
@@ -35,7 +35,7 @@ private int cantidad;
 
 
 
-    public Libro(int id,String codigo,String titulo,int cantidad){
+    public Libro(Long id,String codigo,String titulo,int cantidad){
         
         this.id=id;
         this.codigo=codigo;
@@ -47,7 +47,7 @@ private int cantidad;
 
 
 
-    public int getId(){return this.id;}
+    public Long getId(){return this.id;}
 
     public String getCodigo(){return this.codigo;}
 

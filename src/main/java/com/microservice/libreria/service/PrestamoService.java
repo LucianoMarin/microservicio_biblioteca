@@ -1,5 +1,19 @@
 package com.microservice.libreria.service;
 
-public class PrestamoService {
+import java.util.List;
+
+import com.microservice.libreria.model.Prestamo;
+
+public interface PrestamoService {
+
+
+    List <Prestamo> mostrarPrestamo();
     
+    Prestamo obtenerPrestamo(Long id);
+
+    Prestamo crearPrestamo();
+
+    Prestamo editarPrestamo(Long id, Prestamo prestamo);
+
+    void eliminarPrestamo(Long id);
 }

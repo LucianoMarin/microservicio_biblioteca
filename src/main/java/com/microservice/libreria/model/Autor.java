@@ -13,7 +13,7 @@ public class Autor {
 
     @Id 
     @GeneratedValue (strategy=GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     
     @Column (name="rut")
     private String rut;
@@ -32,7 +32,7 @@ public class Autor {
 
 
 
-    public Autor(int id, String rut, String primer_nombre,String segundo_nombre,String apellido_paterno,String apellido_materno){
+    public Autor(Long id, String rut, String primer_nombre,String segundo_nombre,String apellido_paterno,String apellido_materno){
 
         this.id=id;
         this.rut=rut;
@@ -44,7 +44,7 @@ public class Autor {
 
     }
 
-    public int getId(){return this.id;}
+    public Long getId(){return this.id;}
 
     public String getRut(){return this.rut;}
 
