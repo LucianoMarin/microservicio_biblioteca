@@ -11,7 +11,7 @@ public interface PrestamoService {
     
     Prestamo obtenerPrestamo(Long id);
 
-    Prestamo crearPrestamo();
+    Prestamo crearPrestamo(Prestamo prestamo);
 
     Prestamo editarPrestamo(Long id, Prestamo prestamo);
 

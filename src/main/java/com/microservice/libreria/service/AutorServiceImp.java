@@ -14,31 +14,47 @@ public class AutorServiceImp implements AutorService  {
 
 
     @Override
-    public Autor crearAutor() {
-        // TODO Auto-generated method stub
-        return null;
+    public Autor crearAutor(Autor autor) {
+        
+        return autorRepository.save(autor);
+
     }
 
     @Override
     public void eliminarAutor(Long id) {
-        // TODO Auto-generated method stub
+
+        autorRepository.deleteById(id);
         
     }
 
     @Override
     public Autor modificarAutor(Long id, Autor autor) {
-        // TODO Auto-generated method stub
-        return null;
+
+        Autor existe=autorRepository.findById(id).orElseThrow();
+
+        if(existe.getNombre()!=null){
+        
+            existe.setNombre(autor.getNombre());
+        }
+
+        if(existe.getApellido()!=null){
+    
+            existe.setApellido(autor.getApellido());
+        }
+
+        return autorRepository.save(existe);
+
     }
 
     @Override
     public List<Autor> mostrarAutor() {
-        // TODO Auto-generated method stub
-        return null;
+        return autorRepository.findAll();
     }
+
+
     @Override
     public Autor obtenerAutor(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return autorRepository.findById(id).orElseThrow();
     }
 }

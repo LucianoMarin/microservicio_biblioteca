@@ -13,32 +13,43 @@ public class EditorialServiceImp implements EditorialService{
     private EditorialRepository editorialRepository;
 
     @Override
-    public Editorial crearEditorial() {
-        // TODO Auto-generated method stub
-        return null;
+    public Editorial crearEditorial(Editorial editorial) {
+        
+        return editorialRepository.save(editorial);
     }
 
     @Override
     public Editorial editarEditorial(Long id, Editorial editorial) {
-        // TODO Auto-generated method stub
-        return null;
+        Editorial existe=editorialRepository.findById(id).orElseThrow();
+
+
+        if(existe.getNombreEditorial()!=null){
+            
+            existe.setNombreEditorial(editorial.getNombreEditorial());
+
+        }
+
+
+        return editorialRepository.save(existe);
     }
+
+
 
     @Override
     public void eliminarEditorial(Long id) {
-        // TODO Auto-generated method stub
         
+        editorialRepository.deleteById(id);
     }
 
     @Override
     public List<Editorial> mostrarEditorial() {
-        // TODO Auto-generated method stub
-        return null;
+
+        return editorialRepository.findAll();
     }
 
     @Override
     public Editorial obtenerEditorial(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+  
+        return editorialRepository.findById(id).orElseThrow();
     }
 }

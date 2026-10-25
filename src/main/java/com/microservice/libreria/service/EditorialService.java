@@ -11,7 +11,7 @@ public interface EditorialService {
     
     Editorial obtenerEditorial(Long id);
 
-    Editorial crearEditorial();
+    Editorial crearEditorial(Editorial editorial);
 
     Editorial editarEditorial(Long id,Editorial editorial);
 

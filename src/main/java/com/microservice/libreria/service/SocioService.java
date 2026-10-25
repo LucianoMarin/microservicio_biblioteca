@@ -10,7 +10,7 @@ public interface SocioService  {
     
     Socio obtenerSocio(Long id);
 
-    Socio crearSocio();
+    Socio crearSocio(Socio socio);
 
     Socio editarSocio(Long id, Socio socio);
     

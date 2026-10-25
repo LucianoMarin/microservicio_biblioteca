@@ -2,38 +2,66 @@ package com.microservice.libreria.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.microservice.libreria.model.Socio;
+import com.microservice.libreria.repository.SocioRepository;
 
-public class SocioServiceImp  implements SocioService{
+public class SocioServiceImp implements SocioService {
 
-    
+    @Autowired
+    SocioRepository socioRepository;
+
     @Override
-    public Socio crearSocio() {
-        // TODO Auto-generated method stub
-        return null;
+    public Socio crearSocio(Socio socio) {
+
+        return socioRepository.save(socio);
     }
 
     @Override
     public Socio editarSocio(Long id, Socio socio) {
-        // TODO Auto-generated method stub
+
+        Socio existe = socioRepository.findById(id).orElseThrow();
+        if (existe.getRut() != null) {
+            existe.setRut(socio.getRut());
+        }
+        if (existe.getPrimerNombre() != null) {
+            existe.setPrimerNombre(socio.getPrimerNombre());
+        }
+        if (existe.getSegundoNombre() != null) {
+            existe.setSegundoNombre(socio.getSegundoNombre());
+        }
+        if (existe.getApellidoPaterno() != null) {
+            existe.setApellidoPaterno(socio.getApellidoPaterno());
+        }
+        if (existe.getApellidoMaterno() != null) {
+            existe.setApellidoMaterno(socio.getApellidoMaterno());
+        }
+        if (existe.getEdad() >=0) {
+            existe.setEdad(socio.getEdad());
+        }
+
+        if (existe.getEstado() != null) {
+            existe.setEstado(socio.getEstado());
+        }
         return null;
     }
 
     @Override
     public void eliminarSocio(Long id) {
-        // TODO Auto-generated method stub
-        
+
+        socioRepository.deleteById(id);
     }
 
     @Override
     public List<Socio> mostrarSocio() {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return socioRepository.findAll();
     }
 
     @Override
     public Socio obtenerSocio(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+
+        return socioRepository.findById(id).orElseThrow();
     }
 }

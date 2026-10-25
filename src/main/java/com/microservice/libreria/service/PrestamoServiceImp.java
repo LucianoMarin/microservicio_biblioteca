@@ -15,34 +15,52 @@ public class PrestamoServiceImp implements PrestamoService{
     
 
     @Override
-    public Prestamo crearPrestamo() {
-        // TODO Auto-generated method stub
-        return null;
+    public Prestamo crearPrestamo(Prestamo prestamo) {
+        
+        return prestamoRepository.save(prestamo);
     }
     
 
     @Override
     public Prestamo editarPrestamo(Long id, Prestamo prestamo) {
-        // TODO Auto-generated method stub
-        return null;
+
+        Prestamo existe=prestamoRepository.findById(id).orElseThrow();
+
+        if(existe.getLibro()!=null){
+            existe.setLibros(prestamo.getLibro());
+        }
+        if(existe.getSocio()!=null){
+            existe.setSocio(prestamo.getSocio());
+        }
+        if(existe.getFechaPrestamo()!=null){
+            existe.setFechaPrestamo(prestamo.getFechaPrestamo());
+        }
+        if(existe.getFechaPrestamo()!=null){
+            existe.setFechaPrestamo(prestamo.getFechaPrestamo());
+        }
+        if(existe.getFechaDevolucion()!=null){
+            existe.setFechaDevolucion(prestamo.getFechaDevolucion());
+        }
+
+        return prestamoRepository.save(existe);
     }
 
     @Override
     public void eliminarPrestamo(Long id) {
-        // TODO Auto-generated method stub
-        
+    
+        prestamoRepository.deleteById(id);
     }
 
     @Override
     public List<Prestamo> mostrarPrestamo() {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return prestamoRepository.findAll();
     }
 
     @Override
     public Prestamo obtenerPrestamo(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+
+        return prestamoRepository.findById(id).orElseThrow();
     }
 
     

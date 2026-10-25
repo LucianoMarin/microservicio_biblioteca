@@ -22,33 +22,63 @@ public class LibroServiceImp implements LibroService {
 
 
     @Override
-    public Libro crearLibro() {
-        // TODO Auto-generated method stub
-        return null;
+    public Libro crearLibro(Libro libro) {
+
+
+        return libroRepository.save(libro);
     }
     
 
     @Override
     public Libro editarLibro(Long id, Libro libro) {
-        // TODO Auto-generated method stub
-        return null;
+        Libro existe=libroRepository.findById(id).orElseThrow();
+
+
+        if(existe.getCodigo()!=null){
+            existe.setCodigo(libro.getCodigo());
+
+        }
+        if(existe.getTitulo()!=null){
+            existe.setTitulo(libro.getTitulo());
+
+        }
+        if(existe.getAutor()!=null){
+            existe.setAutor(libro.getAutor());
+        }
+         
+        if(existe.getAnoPublicacion()>=0){
+            existe.setAnoPublicacion(libro.getAnoPublicacion());
+        }
+
+        if(existe.getGenero()!=null){
+            existe.setGenero(libro.getGenero());
+        }
+
+        if(existe.getEditorial()!=null){
+            existe.setEditorial(libro.getEditorial());
+        }
+
+        if(existe.getCantidad()>=0){
+            existe.setCantidad(libro.getCantidad());
+        }
+        
+        return libroRepository.save(existe);
     }
 
     @Override
     public void eliminarLibro(Long id) {
-        // TODO Auto-generated method stub
-        
+    
+        libroRepository.deleteById(id);
     }
 
     @Override
     public List<Libro> mostrarLibro() {
-        // TODO Auto-generated method stub
-        return null;
+        return libroRepository.findAll();
     }
 
     @Override
     public Libro obtenerLibro(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return libroRepository.findById(id).orElseThrow();
     }
 }
