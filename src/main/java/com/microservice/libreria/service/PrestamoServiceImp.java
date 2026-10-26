@@ -21,7 +21,6 @@ public class PrestamoServiceImp implements PrestamoService{
 
     @Override
     public Prestamo crearPrestamo(Prestamo prestamo) {
-        
         return prestamoRepository.save(prestamo);
     }
     
@@ -31,8 +30,8 @@ public class PrestamoServiceImp implements PrestamoService{
 
         Prestamo existe=prestamoRepository.findById(id).orElseThrow();
 
-        if(prestamo.getLibro()!=null){
-            existe.setLibros(prestamo.getLibro());
+        if(prestamo.getLibros()!=null){
+            existe.setLibros(prestamo.getLibros());
         }
         if(prestamo.getSocio()!=null){
             existe.setSocio(prestamo.getSocio());

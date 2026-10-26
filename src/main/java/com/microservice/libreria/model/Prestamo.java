@@ -79,9 +79,9 @@ public class Prestamo {
 
     public Long getId(){ return this.id;}
 
-    public Socio getSocio(){ return this.socio;}
+    public Socio getSocio(){ return this.socio; }
 
-    public List <Libro> getLibro(){ return this.libros; }
+    public List <Libro> getLibros(){ return this.libros; }
 
     public Date getFechaPrestamo(){ return this.fecha_prestamo; }
 
