@@ -30,9 +30,9 @@ public class EditorialServiceImp implements EditorialService{
         Editorial existe=editorialRepository.findById(id).orElseThrow();
 
 
-        if(existe.getNombreEditorial()!=null){
+        if(editorial.getNombre()!=null && !editorial.getNombre().isBlank()){
             
-            existe.setNombreEditorial(editorial.getNombreEditorial());
+            existe.setNombre(editorial.getNombre());
 
         }
 

@@ -38,12 +38,14 @@ public class AutorServiceImp implements AutorService  {
 
         Autor existe=autorRepository.findById(id).orElseThrow();
 
-        if(existe.getNombre()!=null){
+    
+
+        if(autor.getNombre()!=null && !autor.getNombre().isBlank()){
         
             existe.setNombre(autor.getNombre());
         }
 
-        if(existe.getApellido()!=null){
+        if(autor.getApellido()!=null && !autor.getApellido().isBlank()){
     
             existe.setApellido(autor.getApellido());
         }

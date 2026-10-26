@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.microservice.libreria.model.Libro;
+import com.microservice.libreria.model.Editorial;
+import com.microservice.libreria.model.Autor;
 import com.microservice.libreria.repository.AutorRepository;
 import com.microservice.libreria.repository.EditorialRepository;
 import com.microservice.libreria.repository.LibroRepository;
@@ -34,7 +36,6 @@ public class LibroServiceImp implements LibroService {
     @Override
     public Libro crearLibro(Libro libro) {
 
-
         return libroRepository.save(libro);
     }
     
@@ -44,31 +45,31 @@ public class LibroServiceImp implements LibroService {
         Libro existe=libroRepository.findById(id).orElseThrow();
 
 
-        if(existe.getCodigo()!=null){
+        if(libro.getCodigo()!=null){
             existe.setCodigo(libro.getCodigo());
 
         }
-        if(existe.getTitulo()!=null){
+        if(libro.getTitulo()!=null){
             existe.setTitulo(libro.getTitulo());
 
         }
-        if(existe.getAutor()!=null){
+        if(libro.getAutor()!=null){
             existe.setAutor(libro.getAutor());
         }
          
-        if(existe.getAnoPublicacion()>=0){
+        if(libro.getAnoPublicacion()>=0){
             existe.setAnoPublicacion(libro.getAnoPublicacion());
         }
 
-        if(existe.getGenero()!=null){
+        if(libro.getGenero()!=null){
             existe.setGenero(libro.getGenero());
         }
 
-        if(existe.getEditorial()!=null){
+        if(libro.getEditorial()!=null){
             existe.setEditorial(libro.getEditorial());
         }
 
-        if(existe.getCantidad()>=0){
+        if(libro.getCantidad()>=0){
             existe.setCantidad(libro.getCantidad());
         }
         

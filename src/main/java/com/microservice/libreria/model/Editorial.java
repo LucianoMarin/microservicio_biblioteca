@@ -37,13 +37,13 @@ public class Editorial {
 
     public void setId(Long id){ this.id=id; }
 
-    public void setNombreEditorial(String nombre){ this.nombre=nombre; }
+    public void setNombre(String nombre){ this.nombre=nombre; }
 
 
 
     public Long getId(){return this.id;}
 
-    public String getNombreEditorial(){return this.nombre;}
+    public String getNombre(){return this.nombre;}
     
 
     
