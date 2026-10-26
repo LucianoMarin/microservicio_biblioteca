@@ -28,7 +28,7 @@ private String titulo;
 private Autor autor;
 
 @Column(name="ann_publicacion")
-private int ann_publicacion;
+private Integer ann_publicacion;
 
 @Column(name="genero")
 private String genero;
@@ -38,7 +38,7 @@ private String genero;
 private Editorial editorial;
 
 @Column(name="cantidad")
-private int cantidad;
+private Integer cantidad;
 
 
 
@@ -46,7 +46,7 @@ private int cantidad;
 /* CONSTRUCTOR CLASE LIBRO */
     public Libro() {}
 
-    public Libro(Long id,String codigo,Autor autor,int ann_publicacion,String genero,Editorial editorial,String titulo,int cantidad){
+    public Libro(Long id,String codigo,Autor autor,Integer ann_publicacion,String genero,Editorial editorial,String titulo,Integer cantidad){
         
         this.id=id;
         this.codigo=codigo;
@@ -71,7 +71,7 @@ private int cantidad;
 
     public void setAutor(Autor autor){ this.autor=autor; }
 
-    public void setAnoPublicacion(int ann_publicacion){ this.ann_publicacion=ann_publicacion; }
+    public void setAnoPublicacion(Integer ann_publicacion){ this.ann_publicacion=ann_publicacion; }
 
     public void setGenero(String genero){ this.genero=genero; }
 
@@ -79,7 +79,7 @@ private int cantidad;
 
     public void setTitulo(String titulo){ this.titulo=titulo; }
 
-    public void setCantidad(int cantidad){ this.cantidad=cantidad; }
+    public void setCantidad(Integer cantidad){ this.cantidad=cantidad; }
 
 
 
@@ -90,7 +90,7 @@ private int cantidad;
 
     public Autor getAutor(){return this.autor;}
 
-    public int getAnoPublicacion(){return this.ann_publicacion;}
+    public Integer getAnoPublicacion(){return this.ann_publicacion;}
 
     public String getGenero(){return this.genero;}
 
@@ -98,7 +98,7 @@ private int cantidad;
 
     public String getTitulo(){return this.titulo;}
 
-    public int getCantidad(){return this.cantidad;}
+    public Integer getCantidad(){return this.cantidad;}
 
 
 }

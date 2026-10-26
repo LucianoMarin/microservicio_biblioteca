@@ -31,7 +31,7 @@ public class Socio {
     private String apellido_materno;
 
     @Column(name="edad")
-    private int edad;
+    private Integer edad;
 
     @Column(name="estado")
     private String estado;
@@ -43,7 +43,7 @@ public class Socio {
     public Socio(){}
 
 
-    public Socio(Long id, String rut, String primer_nombre, String segundo_nombre, String apellido_paterno, String apellido_materno, int edad, String estado){
+    public Socio(Long id, String rut, String primer_nombre, String segundo_nombre, String apellido_paterno, String apellido_materno, Integer edad, String estado){
 
         this.id=id;
         this.rut=rut;
@@ -68,7 +68,7 @@ public class Socio {
     public void setSegundoNombre(String segundo_nombre){ this.segundo_nombre=segundo_nombre; }
     public void setApellidoPaterno(String apellido_paterno){ this.apellido_paterno=apellido_paterno; }
     public void setApellidoMaterno(String apellido_materno){ this.apellido_materno=apellido_materno; }
-    public void setEdad(int edad){ this.edad=edad; }
+    public void setEdad(Integer edad){ this.edad=edad; }
     public void setEstado(String estado){ this.estado=estado; }
 
 
@@ -79,7 +79,7 @@ public class Socio {
     public String getSegundoNombre(){ return this.segundo_nombre; }
     public String getApellidoPaterno(){ return this.apellido_paterno; }
     public String getApellidoMaterno(){ return this.apellido_materno; }
-    public int getEdad(){ return this.edad; }
+    public Integer getEdad(){ return this.edad; }
     public String getEstado(){ return this.estado; }
 
     

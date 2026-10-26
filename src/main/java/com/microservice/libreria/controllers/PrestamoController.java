@@ -14,6 +14,8 @@ import com.microservice.libreria.model.Prestamo;
 import com.microservice.libreria.service.PrestamoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController 
@@ -54,6 +56,12 @@ public class PrestamoController {
         prestamoService.eliminarPrestamo(id);
     }
 
+
+    @PutMapping("/{id}")
+    public Prestamo editarPrestamo(@PathVariable Long id, @RequestBody Prestamo prestamo) {
+        
+        return prestamoService.editarPrestamo(id, prestamo);
+    }
     
     
 }
