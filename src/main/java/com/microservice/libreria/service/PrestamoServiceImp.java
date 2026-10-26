@@ -31,19 +31,19 @@ public class PrestamoServiceImp implements PrestamoService{
 
         Prestamo existe=prestamoRepository.findById(id).orElseThrow();
 
-        if(existe.getLibro()!=null){
+        if(prestamo.getLibro()!=null){
             existe.setLibros(prestamo.getLibro());
         }
-        if(existe.getSocio()!=null){
+        if(prestamo.getSocio()!=null){
             existe.setSocio(prestamo.getSocio());
         }
-        if(existe.getFechaPrestamo()!=null){
+        if(prestamo.getFechaPrestamo()!=null){
             existe.setFechaPrestamo(prestamo.getFechaPrestamo());
         }
-        if(existe.getFechaPrestamo()!=null){
+        if(prestamo.getFechaPrestamo()!=null){
             existe.setFechaPrestamo(prestamo.getFechaPrestamo());
         }
-        if(existe.getFechaDevolucion()!=null){
+        if(prestamo.getFechaDevolucion()!=null){
             existe.setFechaDevolucion(prestamo.getFechaDevolucion());
         }
 
