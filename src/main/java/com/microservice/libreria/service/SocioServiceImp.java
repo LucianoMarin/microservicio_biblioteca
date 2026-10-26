@@ -28,29 +28,29 @@ public class SocioServiceImp implements SocioService {
     public Socio editarSocio(Long id, Socio socio) {
 
         Socio existe = socioRepository.findById(id).orElseThrow();
-        if (existe.getRut() != null) {
+        if (socio.getRut() != null && socio.getRut().isBlank()) {
             existe.setRut(socio.getRut());
         }
-        if (existe.getPrimerNombre() != null) {
+        if (socio.getPrimerNombre() != null && socio.getPrimerNombre().isBlank()) {
             existe.setPrimerNombre(socio.getPrimerNombre());
         }
-        if (existe.getSegundoNombre() != null) {
+        if (socio.getSegundoNombre() != null && socio.getSegundoNombre().isBlank()) {
             existe.setSegundoNombre(socio.getSegundoNombre());
         }
-        if (existe.getApellidoPaterno() != null) {
+        if (socio.getApellidoPaterno() != null && socio.getApellidoPaterno().isBlank()) {
             existe.setApellidoPaterno(socio.getApellidoPaterno());
         }
-        if (existe.getApellidoMaterno() != null) {
+        if (socio.getApellidoMaterno() != null && socio.getApellidoMaterno().isBlank()) {
             existe.setApellidoMaterno(socio.getApellidoMaterno());
         }
-        if (existe.getEdad() >=0) {
+        if (socio.getEdad() >=0) {
             existe.setEdad(socio.getEdad());
         }
 
-        if (existe.getEstado() != null) {
+        if (socio.getEstado() != null && socio.getEstado().isBlank()) {
             existe.setEstado(socio.getEstado());
         }
-        return null;
+        return socioRepository.save(existe);
     }
 
     @Override

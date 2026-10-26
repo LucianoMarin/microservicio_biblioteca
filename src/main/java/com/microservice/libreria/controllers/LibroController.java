@@ -37,7 +37,7 @@ public class LibroController {
     private EditorialRepository editorialRepository;
 
    @GetMapping 
-    public List <Libro> mostrarAutores(){
+    public List <Libro> mostrarLibros(){
 
         return libroService.mostrarLibro();
     }
